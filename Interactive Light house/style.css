@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0d19;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #ddd;
+    padding-top: 20px;
+}
+
+/* Youtube link styles */
+.yt-link {
+    background: rgba(229, 37, 33, 0.2);
+    color: #ffd700;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #e52521;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+.yt-link:hover {
+    background: #e52521;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Main canvas box */
+#gameCanvas {
+    width: 800px;
+    height: 464px;
+    background: linear-gradient(to bottom, #11152b, #26365f, #c7817d);
+    position: relative;
+    border: 4px solid #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Mountains */
+.mountains {
+    position: absolute;
+    bottom: 60px;
+    width: 100%;
+    height: 180px;
+    background: #181d33;
+    clip-path: polygon(0% 100%, 0% 70%, 15% 45%, 30% 75%, 55% 35%, 75% 65%, 90% 40%, 100% 55%, 100% 100%);
+    opacity: 0.9;
+    z-index: 2;
+}
+
+/* Ocean */
+.sea {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to bottom, #090d1a, #03050a);
+    z-index: 5;
+}
+
+/* Lighthouse tower (positioned on the left side) */
+#Lighthouse {
+    position: absolute;
+    bottom: 60px;
+    left: 120px; /* Lighthouse tower's position */
+    width: 40px;
+    height: 180px;
+    background: linear-gradient(to bottom, #e52521, #ffffff, #e52521, #ffffff); /* Real lighthouse color */
+    clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+    z-index: 6;
+}
+
+/* Main light center */
+#light_center {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 30px #fff, 0 0 60px #ffea79;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Rotating light beam (Light Beam) */
+#Light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 650px;
+    height: 140px;
+    background: linear-gradient(to right, rgba(255, 234, 121, 0.85), rgba(255, 234, 121, 0.1) 60%, transparent);
+    clip-path: polygon(0% 45%, 100% 0%, 100% 100%, 0% 55%);
+    transform-origin: left center;
+}
+
+/* Story section styles */
+.story-section {
+    width: 760px;
+    background: #161a2e;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    border-left: 5px solid #e52521;
+    line-height: 1.7;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.story-section h2 { margin-top: 0; color: #fff; }
+.story-section span.highlight { color: #ffd700; font-weight: bold; }
+
+/* Rotating animation */
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* 5-story building styles */
+.house {
+    position: absolute;
+    bottom: 60px;
+    left: 125px; /* Lighthouse tower's position */
+    width: 60px;
+    height: 150px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.floor {
+    width: 100%;
+    height: 30px;
+    background: #5d4037; /* Brick-like color */
+    border: 1px solid #3e2723;
+    box-sizing: border-box;
+}
